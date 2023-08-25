@@ -4,6 +4,11 @@
  */
 package com.maxi.cardealership.GUI;
 
+import com.maxi.cardealership.Logic.Car;
+import com.maxi.cardealership.Logic.Controller;
+import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -12,9 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConsultCar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ConsultCar
-     */
+    Controller control = new Controller();
     public ConsultCar() {
         initComponents();
     }
@@ -33,8 +36,8 @@ public class ConsultCar extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableAutos = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -61,11 +64,16 @@ public class ConsultCar extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tableAutos);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("MODIFICAR");
+        btnModificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnModificar.setText("MODIFICAR");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton2.setText("ELIMINAR");
+        btnEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnEliminar.setText("ELIMINAR");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -76,8 +84,8 @@ public class ConsultCar extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -89,9 +97,9 @@ public class ConsultCar extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -144,14 +152,44 @@ public class ConsultCar extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowOpened
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        //control tabla no vacia
+        if(tableAutos.getRowCount() > 0){
+            //valido que haya seleccionado un registro
+            if(tableAutos.getSelectedRow() != -1){
+                
+               //obtengo id auto a borrar
+              int idAuto = Integer.parseInt( String.valueOf( tableAutos.getValueAt(tableAutos.getSelectedRow(), 0)));
+            
+              control.deleteCar(idAuto);
+              mostrarMensaje("Eliminado correctamente","Info","Eliminando auto");
+              loadTable();
+            }
+            else{
+                mostrarMensaje("No seleccionó ningun registro a eliminar","Error","Error al eliminar");
+            }
+        }
+        else{
+            mostrarMensaje("La tabla está vacía, no se puede eliminar","Error","Error al eliminar");
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+  public void mostrarMensaje(String mensaje,String tipoMensaje,String titulo){
+                JOptionPane optionPane = new JOptionPane(mensaje);
+                if(tipoMensaje.equals("Info")){
+                    optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);}
+                else if(tipoMensaje.equals("Error")){
+                    optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+                }
+                JDialog dialog = optionPane.createDialog(titulo);
+                dialog.setAlwaysOnTop(true);
+                dialog.setVisible(true);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -174,6 +212,21 @@ public class ConsultCar extends javax.swing.JFrame {
       
       modeloTabla.setColumnIdentifiers(titulos);
       
+      //treaer autos de la base de datos
+      
+      List<Car> listCars = control.traerAutos();
+      
+      //setear datos tabla
+      
+      if(listCars != null){
+          
+          for(Car auto : listCars){
+              Object[] object = {auto.getId(),auto.getModel(),auto.getBrand(),auto.getMotor(),auto.getColor(),auto.getPatent(),auto.getNumDoors()};
+              modeloTabla.addRow(object);
+      }
+      
       tableAutos.setModel(modeloTabla);
     }
 }
+}    
+    

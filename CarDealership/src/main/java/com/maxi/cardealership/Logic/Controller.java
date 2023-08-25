@@ -5,6 +5,7 @@
 package com.maxi.cardealership.Logic;
 
 import com.maxi.cardealership.persistence.ControllerPersistence;
+import java.util.List;
 
 /**
  *
@@ -24,5 +25,17 @@ public class Controller {
          car.setNumDoors(numDoors);
         controlPersis.addCar(car);
     }
+
+    public List<Car> traerAutos() {
+        
+       return controlPersis.traerAutos();
+    }
+
+    public void deleteCar(int idAuto) {
+        
+        controlPersis.deleteCar(idAuto);
+    }
+
+  
     
 }
