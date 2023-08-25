@@ -4,6 +4,7 @@
  */
 package com.maxi.cardealership.Logic;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,7 @@ import javax.persistence.Id;
  * @author Maxii
  */
 @Entity
-public class Car {
+public class Car implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;

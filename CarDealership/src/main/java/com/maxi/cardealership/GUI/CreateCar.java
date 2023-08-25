@@ -4,15 +4,17 @@
  */
 package com.maxi.cardealership.GUI;
 
+import com.maxi.cardealership.Logic.Controller;
+
 /**
  *
  * @author maxim
  */
 public class CreateCar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CreateCar
-     */
+    Controller control = new Controller();
+    
+    
     public CreateCar() {
         initComponents();
     }
@@ -29,18 +31,18 @@ public class CreateCar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtModelo = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        txtMarca = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        txtMotor = new javax.swing.JLabel();
-        txtColor = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        txtPatente = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        txtCantPuertas = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jLable1 = new javax.swing.JLabel();
+        txtModelo = new javax.swing.JTextField();
+        txtMarca = new javax.swing.JTextField();
+        dsd = new javax.swing.JLabel();
+        txtMotor = new javax.swing.JTextField();
+        wwww = new javax.swing.JLabel();
+        gggg = new javax.swing.JLabel();
+        txtColor = new javax.swing.JTextField();
+        w = new javax.swing.JLabel();
+        txtPatente = new javax.swing.JTextField();
+        sdsd = new javax.swing.JLabel();
+        txtCantPuertas = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
 
@@ -51,71 +53,81 @@ public class CreateCar extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\maxim\\Pictures\\Car Dealership\\logo.png")); // NOI18N
 
+        jLable1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLable1.setText("Modelo :");
+
         txtModelo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtModelo.setText("Modelo :");
-
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtModeloActionPerformed(evt);
             }
         });
 
         txtMarca.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtMarca.setText("Marca :");
-
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtMarcaActionPerformed(evt);
             }
         });
+
+        dsd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dsd.setText("Marca :");
 
         txtMotor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtMotor.setText("Motor :");
+        txtMotor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMotorActionPerformed(evt);
+            }
+        });
+
+        wwww.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        wwww.setText("Motor :");
+
+        gggg.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        gggg.setText("Color :");
 
         txtColor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtColor.setText("Color :");
-
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtColorActionPerformed(evt);
             }
         });
+
+        w.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        w.setText("Patente :");
 
         txtPatente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtPatente.setText("Patente :");
-
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtPatente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtPatenteActionPerformed(evt);
             }
         });
 
-        txtCantPuertas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtCantPuertas.setText("Cant. Puertas :");
+        sdsd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        sdsd.setText("Cant. Puertas :");
 
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtCantPuertas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCantPuertas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtCantPuertasActionPerformed(evt);
             }
         });
 
         btnLimpiar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnLimpiar.setText("LIMPIAR");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnGuardar.setText("GUARDAR");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,29 +142,29 @@ public class CreateCar extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtModelo)
+                                        .addComponent(jLable1)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField1))
+                                        .addComponent(txtModelo))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtMarca)
+                                        .addComponent(dsd)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField2))
+                                        .addComponent(txtMarca))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtMotor)
+                                        .addComponent(wwww)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField3))
+                                        .addComponent(txtMotor))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtColor)
+                                        .addComponent(gggg)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField4))
+                                        .addComponent(txtColor))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtPatente)
+                                        .addComponent(w)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField5))
+                                        .addComponent(txtPatente))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(txtCantPuertas)
+                                        .addComponent(sdsd)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField6)))
+                                        .addComponent(txtCantPuertas)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,28 +184,28 @@ public class CreateCar extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtModelo)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLable1)
+                            .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMarca)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dsd)
+                            .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtMotor)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(wwww)
+                            .addComponent(txtMotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtColor)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(gggg)
+                            .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPatente)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(w)
+                            .addComponent(txtPatente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCantPuertas)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(sdsd)
+                            .addComponent(txtCantPuertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,82 +231,86 @@ public class CreateCar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtModeloActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtMarcaActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtMotorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMotorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtMotorActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtColorActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtPatenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtPatenteActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtCantPuertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantPuertasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtCantPuertasActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+     String model = txtModelo.getText();
+     String brand = txtMarca.getText();
+     String motor = txtMotor.getText();
+     String color = txtColor.getText();
+     String patent = txtPatente.getText();
+     int numDoors = Integer.parseInt(txtCantPuertas.getText()) ;
+        
+     //añadiendo automovil
+     control.saveData(model,brand,motor,color,patent,numDoors);
+     
+       // Mostrar mensaje de éxito
+    javax.swing.JOptionPane.showMessageDialog(this, "Automóvil creado correctamente.", "Éxito", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    
+    // Limpiar los campos después de crear correctamente
+    txtModelo.setText("");
+    txtMarca.setText("");
+    txtMotor.setText("");
+    txtColor.setText("");
+    txtPatente.setText("");
+    txtCantPuertas.setText("");
+     
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+         txtModelo.setText("");
+         txtMarca.setText("");
+         txtMotor.setText("");
+         txtColor.setText("");
+         txtPatente.setText("");
+         txtCantPuertas.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CreateCar().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JLabel dsd;
+    private javax.swing.JLabel gggg;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLable1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JLabel txtCantPuertas;
-    private javax.swing.JLabel txtColor;
-    private javax.swing.JLabel txtMarca;
-    private javax.swing.JLabel txtModelo;
-    private javax.swing.JLabel txtMotor;
-    private javax.swing.JLabel txtPatente;
+    private javax.swing.JLabel sdsd;
+    private javax.swing.JTextField txtCantPuertas;
+    private javax.swing.JTextField txtColor;
+    private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtModelo;
+    private javax.swing.JTextField txtMotor;
+    private javax.swing.JTextField txtPatente;
+    private javax.swing.JLabel w;
+    private javax.swing.JLabel wwww;
     // End of variables declaration//GEN-END:variables
 }
