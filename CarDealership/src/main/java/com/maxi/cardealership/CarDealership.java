@@ -4,6 +4,8 @@
 
 package com.maxi.cardealership;
 
+import com.maxi.cardealership.GUI.Principal;
+
 /**
  *
  * @author Maxii
@@ -11,6 +13,9 @@ package com.maxi.cardealership;
 public class CarDealership {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+    //iniciando pantalla principal    
+    Principal princ = new Principal();    
+    princ.setVisible(true);
+    princ.setLocationRelativeTo(null);
     }
 }

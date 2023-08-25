@@ -4,13 +4,21 @@
  */
 package com.maxi.cardealership.Logic;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Maxii
  */
+@Entity
 public class Car {
-    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
+    
     private String model;
     private String brand;
     private String motor;
