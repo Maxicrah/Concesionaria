@@ -34,5 +34,17 @@ public class ControllerPersistence {
             Logger.getLogger(ControllerPersistence.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public Car traerAuto(int idAuto) {
+        return carJpa.findCar(idAuto);
+    }
+
+    public void modificarAuto(Car cars) {
+        try {
+            carJpa.edit(cars);
+        } catch (Exception ex) {
+            Logger.getLogger(ControllerPersistence.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

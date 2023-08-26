@@ -36,6 +36,23 @@ public class Controller {
         controlPersis.deleteCar(idAuto);
     }
 
+    public Car traerAuto(int idAuto) {
+        return controlPersis.traerAuto(idAuto);
+    }
+
+    public void modificarAuto(Car cars, String model, String brand, String motor, String color, String patent, int numDoors) {
+        cars.setColor(color);
+        cars.setBrand(brand);
+        cars.setModel(model);
+        cars.setPatent(patent);
+        cars.setMotor(motor);
+        cars.setNumDoors(numDoors);
+        
+        
+        controlPersis.modificarAuto(cars);
+        
+    }
+
   
     
 }

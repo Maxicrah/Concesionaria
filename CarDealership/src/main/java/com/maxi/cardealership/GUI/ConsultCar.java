@@ -66,6 +66,11 @@ public class ConsultCar extends javax.swing.JFrame {
 
         btnModificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnModificar.setText("MODIFICAR");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEliminar.setText("ELIMINAR");
@@ -173,6 +178,30 @@ public class ConsultCar extends javax.swing.JFrame {
             mostrarMensaje("La tabla está vacía, no se puede eliminar","Error","Error al eliminar");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        //control tabla no vacia
+        if(tableAutos.getRowCount() > 0){
+            //valido que haya seleccionado un registro
+            if(tableAutos.getSelectedRow() != -1){
+                
+               //obtengo id auto a borrar
+              int idAuto = Integer.parseInt( String.valueOf( tableAutos.getValueAt(tableAutos.getSelectedRow(), 0)));
+              //pasando a la GUI el id
+                  EditCar edit = new EditCar(idAuto);
+                  edit.setVisible(true);
+                  edit.setLocationRelativeTo(null);
+                  this.dispose();
+              loadTable();
+            }
+            else{
+                mostrarMensaje("No seleccionó ningun registro a modificar","Error","Error al eliminar");
+            }
+        }
+        else{
+            mostrarMensaje("La tabla está vacía, no se puede modificar","Error","Error al eliminar");
+        }
+    }//GEN-LAST:event_btnModificarActionPerformed
 
   public void mostrarMensaje(String mensaje,String tipoMensaje,String titulo){
                 JOptionPane optionPane = new JOptionPane(mensaje);
